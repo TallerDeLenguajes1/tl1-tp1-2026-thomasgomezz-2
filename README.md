@@ -29,6 +29,13 @@ procesar_enigma -->Procesar numero(Ejecuta todas las operaciones en orden).
 
 ##Resultados del punto 3 g
 1. Se agregó la libreria #include <stdio.h> al inicio del archivo para permitir la compilacion correcta.
-2. Error en scanf("%d", valor1); 
+2. Error en el uso de scanf - ("%d", valor1); 
 Se agregó el & en valor1 --> &valor1.
-3. En el return0 faltaba la ";" al final.
+3. Error de sintaxis en el return0 faltaba la ";" al final, lo cual impedía la compilacion del programa.
+4.Error logico(paso por valor)- Se reemplazo en el codigo el  la funcion void duplicar_numero(int numero) {
+    numero = numero * 2;
+} por --> void duplicar_numero(int *numero) {
+    *numero = *numero * 2;
+}
+Ya que antes trabajaba con un paso por valor(copia) y la ultima funcion solo devolvia el valor del numero sin multiplicarlo *2, ya modificado y pasando el valor por referencia(puntero)cumple su funcion
+ya que asi la funcion trabaja con una copia y no se modificaba el valor al final de la funcion llamada.
